@@ -1,0 +1,33 @@
+-- creating database
+create database univarsity;
+
+-- creating table
+create table univarsity.students(
+student_id int primary key,
+student_name varchar(50),
+student_age int,
+student_major varchar(50));
+
+-- inserting values
+insert into univarsity.students values
+(1,"Saranya",21,"Biology"),
+(2,"Vinothini",20,"Computer science"),
+(3,"Lekha",21,"Arts"),
+(4,"Anitha",20,"Computer science"),
+(5,"Avanthika",23,"History");
+
+-- retrive records from students table
+select * from univarsity.students;
+
+-- retrive students majoring computer science
+select * from univarsity.students where student_major="Computer science";
+
+-- retrive oldest student
+select max(student_age) from univarsity.students;
+
+-- update major using id
+update univarsity.students set student_major="Computer science" where student_id=5;
+
+-- delete student id from table
+delete from univarsity.students where student_id=5;
+
